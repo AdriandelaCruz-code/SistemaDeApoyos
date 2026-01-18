@@ -13,5 +13,7 @@
     "@types/node": "^20.4.2",
     "ts-node": "^10.9.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "googleapis": "^121.0.0"
+  }
 }
