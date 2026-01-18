@@ -5,8 +5,10 @@ import { MockSheetsReader } from '../mock/mock-sheets-adapter';
 import { InMemoryAprendizRepository, InMemoryApoyoRepository, InMemoryCasoRepository, InMemoryEnvioRepository } from '../mock/in-memory-repositories';
 import { SHEETS_READER, PROCESAR_POSTULACION } from '../../application/ports/external/tokens';
 import { ProcesarPostulacion } from '../../application/use-cases/procesar-postulacion';
+import { ImportController } from './import.controller';
 
 @Module({
+  controllers: [ImportController],
   providers: [
     // Sheets reader provider: elige Mock o Real según config.env
     {
