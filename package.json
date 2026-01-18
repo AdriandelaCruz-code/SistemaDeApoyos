@@ -5,8 +5,13 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/main.js",
-    "tsc": "tsc --noEmit"
+    "tsc": "tsc --noEmit",
+    "run:mock": "ts-node src/scripts/run-procesar-postulacion-mock.ts"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "@types/node": "^20.4.2",
+    "ts-node": "^10.9.1"
+  },
   "dependencies": {}
 }
