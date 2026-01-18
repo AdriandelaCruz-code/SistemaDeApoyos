@@ -1,8 +1,11 @@
-// Bootstrap minimal placeholder for NestJS application
-// Actual NestJS wiring (modules/providers/controllers) will be added later.
+import 'reflect-metadata';
+import { NestFactory } from '@nestjs/core';
+import { AppModule } from './infrastructure/nest/app.module';
 
 async function bootstrap() {
-  console.log('Bootstrap placeholder - NestJS app will be initialized here');
+  const app = await NestFactory.create(AppModule);
+  await app.listen(3000);
+  console.log('NestJS app listening on http://localhost:3000');
 }
 
 bootstrap().catch((err) => {
