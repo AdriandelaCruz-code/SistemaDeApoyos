@@ -1,0 +1,12 @@
+{
+  "name": "sistema-de-apoyos-backend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/main.js",
+    "tsc": "tsc --noEmit"
+  },
+  "devDependencies": {},
+  "dependencies": {}
+}
