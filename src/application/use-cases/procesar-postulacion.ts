@@ -59,7 +59,16 @@ export class ProcesarPostulacion {
         if (!aprendiz) {
           const aprendizId = new UniqueEntityID(randomUUID());
           const correoVo = correo ? new Email(String(correo).trim()) : undefined;
-          aprendiz = new Aprendiz(aprendizId, nombre ? String(nombre).trim() : 'NOMBRE_NO_PROVIDED', documento, correoVo, { importedFrom: 'sheets' });
+          // Ajuste: constructor Aprendiz ahora acepta telefono y cuentaBancaria antes de metadata
+          aprendiz = new Aprendiz(
+            aprendizId,
+            nombre ? String(nombre).trim() : 'NOMBRE_NO_PROVIDED',
+            documento,
+            correoVo,
+            undefined,
+            undefined,
+            { importedFrom: 'sheets' },
+          );
           aprendiz = await this.aprendizRepo.save(aprendiz);
         }
 
