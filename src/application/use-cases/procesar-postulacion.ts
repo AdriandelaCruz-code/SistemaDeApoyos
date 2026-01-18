@@ -1,5 +1,5 @@
 import { randomUUID } from 'crypto';
-import { GoogleSheetsReader } from '../ports/external/google-sheets-reader';
+import { GoogleSheetsReader, SheetRow } from '../ports/external/google-sheets-reader';
 import { AprendizRepository } from '../ports/repositories/aprendiz-repository';
 import { ApoyoRepository } from '../ports/repositories/apoyo-repository';
 import { CasoRepository } from '../ports/repositories/caso-repository';
@@ -12,7 +12,7 @@ import { Apoyo } from '../../domain/entities/apoyo';
 import { Caso } from '../../domain/entities/caso';
 import { Envio } from '../../domain/entities/envio';
 
-type Row = Record<string, any> | any[];
+type Row = SheetRow;
 
 export class ProcesarPostulacion {
   constructor(
