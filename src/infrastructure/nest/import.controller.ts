@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Inject, Get } from '@nestjs/common';
+import { Controller, Post, Body, Inject, Get, Query } from '@nestjs/common';
 import { PROCESAR_POSTULACION } from '../../application/ports/external/tokens';
 import { ProcesarPostulacion } from '../../application/use-cases/procesar-postulacion';
 
@@ -27,5 +27,11 @@ export class ImportController {
       status: 'ok',
       endpoints: [{ path: '/import', method: 'POST', body: { spreadsheetId: 'string', range: 'string (optional)' } }],
     };
+  }
+
+  @Get('import')
+  async importGet(@Query('spreadsheetId') spreadsheetId?: string, @Query('range') range?: string) {
+    const result = await this.procesar.execute(spreadsheetId ?? '', range);
+    return result;
   }
 }
